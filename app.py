@@ -15,17 +15,7 @@ def load_css():
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 # ---------------- Gemini Configuration ----------------
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
-
-api_key = os.getenv("GOOGLE_API_KEY")
-
-if not api_key:
-    st.error("GOOGLE_API_KEY not found. Please create a .env file.")
-    st.stop()
-genai.configure(api_key=api_key)
+genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
 model = genai.GenerativeModel("gemini-2.5-flash")
 
 # ---------------- Page Config ----------------
