@@ -1,0 +1,88 @@
+/* ===============================
+   AI Learning Buddy - CSS
+================================== */
+
+/* Background */
+.stApp {
+    background-color: #F5F7FB;
+}
+
+/* Main Title */
+h1 {
+    color: #1E3A8A;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Subheading */
+h3 {
+    color: #2563EB;
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    background: #E0F2FE;
+}
+
+/* Text Input */
+.stTextInput input {
+    border-radius: 10px;
+    border: 2px solid #2563EB;
+    padding: 10px;
+}
+
+/* Select Box */
+.stSelectbox div[data-baseweb="select"] {
+    border-radius: 10px;
+}
+
+/* Buttons */
+.stButton > button {
+    width: 100%;
+    background-color: #2563EB;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.stButton > button:hover {
+    background-color: #1D4ED8;
+}
+
+/* Success Message */
+.stSuccess {
+    border-radius: 10px;
+}
+
+/* Info Box */
+.stInfo {
+    border-radius: 10px;
+}
+
+/* Warning */
+.stWarning {
+    border-radius: 10px;
+}
+
+/* Metrics */
+[data-testid="metric-container"] {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Footer */
+footer {
+    visibility: hidden;
+}
+
+/* Divider */
+hr {
+    border: 1px solid #D1D5DB;
+}
