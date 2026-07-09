@@ -15,15 +15,7 @@ def load_css():
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 # ---------------- Gemini Configuration ----------------
-import os
-from dotenv import load_dotenv
-import google.generativeai as genai
-load_dotenv()
-api_key = os.getenv("GEMINI_API_KEY")
-if not api_key:
-    st.error("GEMINI_API_KEY not found.")
-    st.stop()
-genai.configure(api_key=api_key)
+genai.configure(api_key="YOUR_GEMINI_API_KEY")
 
 model = genai.GenerativeModel("gemini-2.5-flash")
 
@@ -47,6 +39,7 @@ if "topic" not in st.session_state:
 st.sidebar.title("🎓 AI Learning Buddy")
 
 st.sidebar.info("""
+### About
 
 **Created By:** Diya Sharma
 
