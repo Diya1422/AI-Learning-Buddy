@@ -17,16 +17,10 @@ def load_css():
 # ---------------- Gemini Configuration ----------------
 import os
 from dotenv import load_dotenv
-
 load_dotenv()
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
-api_key = os.getenv("GOOGLE_API_KEY")
-
-if not api_key:
-    st.error("GOOGLE_API_KEY not found.")
-    st.stop()
-
-genai.configure(api_key=api_key)
+model = genai.GenerativeModel("gemini-2.5-flash")
 
 # ---------------- Page Config ----------------
 st.set_page_config(
@@ -48,7 +42,6 @@ if "topic" not in st.session_state:
 st.sidebar.title("🎓 AI Learning Buddy")
 
 st.sidebar.info("""
-### About
 
 **Created By:** Diya Sharma
 
