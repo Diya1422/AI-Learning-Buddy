@@ -17,8 +17,13 @@ def load_css():
 # ---------------- Gemini Configuration ----------------
 import os
 from dotenv import load_dotenv
+import google.generativeai as genai
 load_dotenv()
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+api_key = os.getenv("GEMINI_API_KEY")
+if not api_key:
+    st.error("GEMINI_API_KEY not found.")
+    st.stop()
+genai.configure(api_key=api_key)
 
 model = genai.GenerativeModel("gemini-2.5-flash")
 
