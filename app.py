@@ -1,6 +1,6 @@
 import streamlit as st
 from google import genai
-client = genai.Client(api_key=st.secrets["GEMINI_API_KEY"])
+client = genai.Client(api_key=st.secrets["GOOGLE_API_KEY"])
 from prompts import (
     explain_prompt,
     example_prompt,
