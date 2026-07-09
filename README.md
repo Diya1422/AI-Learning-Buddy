@@ -1,6 +1,13 @@
 # 🎓 AI Learning Buddy
 
-An AI-powered learning assistant built using **Streamlit** and **Google Gemini AI**. This application helps beginners understand Machine Learning concepts through explanations, real-life examples, quizzes, and complete learning sessions.
+An AI-powered learning assistant built using **Streamlit** and **Google Gemini AI**. This application helps beginners understand **Machine Learning** concepts through explanations, real-life examples, quizzes, and complete learning sessions.
+
+---
+
+## 🔗 Project Links
+
+- 🌐 **Live Demo:** https://ailearningbuddyfriendly12.streamlit.app/
+- 💻 **GitHub Repository:** https://github.com/Diya1422/AI-Learning-Buddy
 
 ---
 
@@ -9,13 +16,13 @@ An AI-powered learning assistant built using **Streamlit** and **Google Gemini A
 - 📘 Explain Machine Learning concepts
 - 🌍 Real-life examples
 - 📝 Generate quizzes with answers
-- 💬 AI feedback
+- 💬 AI feedback and guidance
 - 🎯 Complete learning sessions
 - 📊 Learning progress tracker
 - 💬 Chat history
 - 📥 Download AI responses
 - 💡 Suggested learning topics
-- 🎨 Light and Dark theme support
+- 🎨 Light & Dark theme support
 
 ---
 
@@ -24,13 +31,14 @@ An AI-powered learning assistant built using **Streamlit** and **Google Gemini A
 - Python
 - Streamlit
 - Google Gemini API
-- HTML/CSS
+- HTML
+- CSS
 
 ---
 
 ## 📂 Project Structure
 
-```
+```text
 AI-Learning-Buddy/
 │
 ├── app.py
@@ -48,7 +56,7 @@ AI-Learning-Buddy/
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/AI-Learning-Buddy.git
+git clone https://github.com/Diya1422/AI-Learning-Buddy.git
 ```
 
 Move into the project folder:
@@ -57,7 +65,7 @@ Move into the project folder:
 cd AI-Learning-Buddy
 ```
 
-Install the required packages:
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -67,13 +75,11 @@ pip install -r requirements.txt
 
 ## 🔑 Configure Gemini API
 
-Open `app.py` and replace:
+Create a `.env` file in the project folder and add your Gemini API key:
 
-```python
-YOUR_GEMINI_API_KEY
+```env
+GEMINI_API_KEY=your_api_key_here
 ```
-
-with your own Gemini API Key.
 
 ---
 
@@ -100,8 +106,11 @@ streamlit run app.py
 
 **Diya Sharma**
 
+- GitHub: https://github.com/Diya1422
+- LinkedIn: https://www.linkedin.com/in/diya-sharma-0087ab241/
+
 ---
 
 ## 📜 License
 
-This project is created for educational purposes.
+This project is developed for educational purposes as part of the **Infosys Springboard AI Prompt Engineering** project.
