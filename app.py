@@ -26,6 +26,11 @@ try:
 except Exception:
     api_key = os.getenv("GEMINI_API_KEY")
 
+st.write("Secret loaded:", api_key is not None)
+
+if api_key:
+    st.write("First 8 chars:", api_key[:8])
+
 client = genai.Client(api_key=api_key)
 # ---------------- Page Config ----------------
 st.set_page_config(
