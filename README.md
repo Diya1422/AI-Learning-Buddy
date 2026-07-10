@@ -1,6 +1,6 @@
 # 🎓 AI Learning Buddy
 
-An AI-powered learning assistant built using **Streamlit** and **Google Gemini AI**. This application helps beginners understand **Machine Learning** concepts through explanations, real-life examples, quizzes, and complete learning sessions.
+An interactive Machine Learning learning assistant built using Streamlit. This application helps beginners understand Machine Learning concepts through explanations, real-life examples, quizzes, and complete learning sessions.
 
 ---
 
@@ -30,7 +30,7 @@ An AI-powered learning assistant built using **Streamlit** and **Google Gemini A
 
 - Python
 - Streamlit
-- Google Gemini API
+- Machine Learning Concepts
 - HTML
 - CSS
 
@@ -42,13 +42,12 @@ An AI-powered learning assistant built using **Streamlit** and **Google Gemini A
 AI-Learning-Buddy/
 │
 ├── app.py
-├── prompts.py
+├── knowledge.py
 ├── style.css
 ├── requirements.txt
 ├── README.md
 └── .gitignore
-```
-
+---
 ---
 
 ## ⚙️ Installation
@@ -72,14 +71,6 @@ pip install -r requirements.txt
 ```
 
 ---
-
-## 🔑 Configure Gemini API
-
-Create a `.env` file in the project folder and add your Gemini API key:
-
-```env
-GEMINI_API_KEY=your_api_key_here
-```
 
 ---
 

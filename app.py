@@ -1,7 +1,4 @@
 import streamlit as st
-from google import genai
-from dotenv import load_dotenv
-import os
 from prompts import (
     explain_prompt,
     example_prompt,
@@ -9,29 +6,12 @@ from prompts import (
     feedback_prompt,
     session_prompt
 )
-
+from knowledge_base import knowledge
 # ---------------- Load CSS ----------------
 def load_css():
     with open("style.css") as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-# ---------------- Gemini Configuration ----------------
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
-
-try:
-    api_key = st.secrets["GEMINI_API_KEY"]
-except Exception:
-    api_key = os.getenv("GEMINI_API_KEY")
-
-st.write("Secret loaded:", api_key is not None)
-
-if api_key:
-    st.write("First 8 chars:", api_key[:8])
-
-client = genai.Client(api_key=api_key)
 # ---------------- Page Config ----------------
 st.set_page_config(
     page_title="AI Learning Buddy",
@@ -52,8 +32,6 @@ if "topic" not in st.session_state:
 st.sidebar.title("🎓 AI Learning Buddy")
 
 st.sidebar.info("""
-### About
-
 **Created By:** Diya Sharma
 
 **Topic:** Machine Learning Fundamentals
@@ -145,7 +123,6 @@ activity = st.selectbox(
         "Generate Quiz",
         "Check My Answer",
         "Complete Learning Session",
-        "Ask Anything"
     ]
 )
 
@@ -182,16 +159,21 @@ if generate:
         try:
 
             with st.spinner("🤖 AI is thinking..."):
-                response = client.models.generate_content(model="gemini-2.5-flash",contents=prompt)
-
+                response_text = knowledge.get(
+                    topic, 
+                    {}
+                ).get(
+                    activity,
+                    "Sorry! This topic is not available yet."
+                )
             st.success("Response Generated Successfully!")
 
             st.markdown("## 📖 AI Response")
 
-            st.info(response.text)
+            st.info(response_text)
 
-            words = len(response.text.split())
-            characters = len(response.text)
+            words = len(response_text.split())
+            characters = len(response_text)
 
             col1, col2 = st.columns(2)
 
@@ -203,15 +185,15 @@ if generate:
 
             st.download_button(
                 "📥 Download Response",
-                response.text,
-                file_name="AI_Response.txt",
+                response_text,
+                file_name="AI_Response_txt",
                 mime="text/plain"
             )
 
             st.session_state.history.append({
                 "topic": topic,
                 "activity": activity,
-                "response": response.text
+                "response": response_text
             })
 
         except Exception as e:
