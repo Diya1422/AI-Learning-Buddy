@@ -6,7 +6,7 @@ An interactive Machine Learning learning assistant built using Streamlit. This a
 
 ## 🔗 Project Links
 
-- 🌐 **Live Demo:** https://ailearningbuddyfriendly12.streamlit.app/
+- 🌐 **Live Demo:** https://ailearningbuddydeveloper.streamlit.app/
 - 💻 **GitHub Repository:** https://github.com/Diya1422/AI-Learning-Buddy
 
 ---
