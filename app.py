@@ -1,6 +1,7 @@
 import streamlit as st
-import google.generativeai as genai
-
+from google import genai
+from dotenv import load_dotenv
+import os
 from prompts import (
     explain_prompt,
     example_prompt,
@@ -15,10 +16,17 @@ def load_css():
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 # ---------------- Gemini Configuration ----------------
-genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
+import os
+from dotenv import load_dotenv
 
-model = genai.GenerativeModel("gemini-2.5-flash")
+load_dotenv()
 
+try:
+    api_key = st.secrets["GEMINI_API_KEY"]
+except Exception:
+    api_key = os.getenv("GEMINI_API_KEY")
+
+client = genai.Client(api_key=api_key)
 # ---------------- Page Config ----------------
 st.set_page_config(
     page_title="AI Learning Buddy",
@@ -169,7 +177,7 @@ if generate:
         try:
 
             with st.spinner("🤖 AI is thinking..."):
-                response = model.generate_content(prompt)
+                response = client.models.generate_content(model="gemini-2.5-flash",contents=prompt)
 
             st.success("Response Generated Successfully!")
 
